@@ -1,0 +1,45 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+
+# --- Build artifacts (PyInstaller output + spec with local paths) ---
+build/
+dist/
+*.spec
+release/
+
+# --- Local runtime data (never committed) ---
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.log
+logs/
+
+# --- Generated / test output ---
+test-data/
+reports/*.html
+
+# --- Secrets / environment files ---
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# --- OS / editor noise ---
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PC Diagnostic Report</title>
+<style>
+  :root { --bg:#0f172a; --panel:#1e293b; --text:#e2e8f0; --muted:#94a3b8;
+          --accent:#38bdf8; --warn:#f59e0b; --crit:#ef4444; --ok:#22c55e; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:"Segoe UI",system-ui,sans-serif; background:var(--bg);
+         color:var(--text); line-height:1.5; }
+  .wrap { max-width:980px; margin:0 auto; padding:24px; }
+  h1 { font-size:1.7rem; margin:0 0 4px; }
+  h2 { font-size:1.15rem; border-bottom:1px solid #334155; padding-bottom:6px;
+       margin:28px 0 12px; color:var(--accent); }
+  .muted { color:var(--muted); font-size:0.85rem; }
+  .panel { background:var(--panel); border-radius:8px; padding:16px; margin:12px 0; }
+  table { width:100%; border-collapse:collapse; }
+  th, td { text-align:left; padding:6px 8px; border-bottom:1px solid #334155;
+           font-size:0.9rem; vertical-align:top; }
+  th { color:var(--muted); font-weight:600; }
+  .badge { display:inline-block; padding:2px 8px; border-radius:12px; font-size:0.75rem;
+           font-weight:700; }
+  .badge.high { background:#7f1d1d; color:#fecaca; }
+  .badge.med  { background:#78350f; color:#fde68a; }
+  .badge.low  { background:#164e63; color:#a5f3fc; }
+  .badge.ok   { background:#14532d; color:#bbf7d0; }
+  .timeline { border-left:2px solid #334155; margin-left:8px; padding-left:16px; }
+  .tl { position:relative; padding:4px 0 12px; }
+  .tl .t { color:var(--accent); font-weight:600; font-size:0.85rem; }
+  .tl .d { color:var(--muted); font-size:0.85rem; }
+  .finding { border-left:3px solid var(--warn); padding:8px 12px; margin:8px 0;
+             background:var(--panel); border-radius:4px; }
+  ul { margin:4px 0 4px 20px; padding:0; }
+  code { background:#0b1120; padding:1px 5px; border-radius:4px; font-size:0.85rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>PC Diagnostic Report</h1>
+  <div class="muted">Generated: 2026-08-18 11:05:37</div>
+  <h2>Incident Summary</h2><div class='panel'><table><tr><th>Type</th><td>HARD_HANG</td></tr><tr><th>Confidence</th><td><span class='badge high'>HIGH</span></td></tr><tr><th>Detected at</th><td>2026-08-18 11:05:06</td></tr><tr><th>Reboot at</th><td>2026-08-18 11:05:06</td></tr><tr><th>Last activity</th><td>2026-08-18 11:04:06</td></tr><tr><th>Estimated hang duration</th><td>60 seconds</td></tr></table></div>
+<h2>System Information</h2><div class='panel'><table><tr><th>Hostname</th><td>DESKTOP-EXAMPLE</td></tr><tr><th>OS</th><td>Windows-10-10.0.19045-SP0</td></tr><tr><th>CPU</th><td>Intel64 Family 6 Model 60 Stepping 3, GenuineIntel @ 2.39 GHz</td></tr><tr><th>Logical CPUs</th><td>8</td></tr><tr><th>Physical CPUs</th><td>4</td></tr><tr><th>Total RAM</th><td>7.88 GB</td></tr></table></div>
+<h2>Timeline</h2><div class='panel timeline'><div class='tl'><div class='t'>10:35:36</div><div class='d'><b>Metrics</b> — CPU 40% · RAM 90%</div></div><div class='tl'><div class='t'>10:37:36</div><div class='d'><b>Metrics</b> — CPU 52% · RAM 96%</div></div><div class='tl'><div class='t'>10:39:36</div><div class='d'><b>Metrics</b> — CPU 64% · RAM 60%</div></div><div class='tl'><div class='t'>10:41:36</div><div class='d'><b>Metrics</b> — CPU 76% · RAM 66%</div></div><div class='tl'><div class='t'>10:43:36</div><div class='d'><b>Metrics</b> — CPU 88% · RAM 72%</div></div><div class='tl'><div class='t'>11:04:46</div><div class='d'><b>Microsoft-Windows-WHEA-Logger (Event 17)</b> — Corrected hardware error</div></div><div class='tl'><div class='t'>11:04:51</div><div class='d'><b>Microsoft-Windows-WHEA-Logger (Event 18)</b> — Hardware error</div></div><div class='tl'><div class='t'>11:04:56</div><div class='d'><b>Microsoft-Windows-WHEA-Logger (Event 19)</b> — Hardware error</div></div><div class='tl'><div class='t'>11:05:01</div><div class='d'><b>dxgkrnl (Event 4101)</b> — Display driver stopped responding</div></div><div class='tl'><div class='t'>11:05:06</div><div class='d'><b>Microsoft-Windows-Kernel-Power (Event 41)</b> — System rebooted without cleanly shutting down</div></div></div>
+<h2>Previous Session</h2><div class='panel'><table><tr><th>Previous boot</th><td>2026-08-18 08:05:36</td></tr><tr><th>Previous session ended cleanly</th><td>No</td></tr><tr><th>Previous session ended unexpectedly</th><td>Yes</td></tr><tr><th>Kernel-Power 41</th><td>Yes</td></tr><tr><th>BugCheck</th><td>No</td></tr><tr><th>Uptime before boot</th><td>2h 59m 30s</td></tr></table></div>
+<h2>Findings</h2><div class='finding'><b>POSSIBLE_HARD_HANG</b> <span class='badge high'>HIGH</span> <span class='muted'>confidence HIGH</span><div class='muted'>System stopped writing diagnostics before an unclean reboot.</div><ul><li>No clean shutdown event</li><li>Unclean reboot detected</li><li>No BugCheck</li></ul></div><div class='finding'><b>POSSIBLE_HARDWARE_ERROR</b> <span class='badge high'>HIGH</span> <span class='muted'>confidence HIGH</span><div class='muted'>Hardware errors occurred shortly before the shutdown.</div><ul><li>3 WHEA hardware error event(s) detected</li></ul></div>
+<h2>Possible Causes</h2><div class='panel'><ul><li>A hard hang (system froze, no BSOD) is likely.</li><li>A hardware-level fault (WHEA) may be present.</li></ul></div>
+<h2>Recommended Next Steps</h2><div class='panel'><ul><li>Review the timeline for the last activity before the freeze.</li><li>Check for driver updates (GPU, chipset, storage).</li><li>Run memory and disk diagnostics.</li><li>Inspect power delivery if it recurs.</li><li>Review WHEA events for the faulty component.</li><li>Run manufacturer hardware diagnostics.</li><li>Test RAM (memtest) and CPU under load.</li></ul></div>
+</div>
+</body>
+</html>

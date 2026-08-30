@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PC Diagnostic Report</title>
+<style>
+  :root { --bg:#0f172a; --panel:#1e293b; --text:#e2e8f0; --muted:#94a3b8;
+          --accent:#38bdf8; --warn:#f59e0b; --crit:#ef4444; --ok:#22c55e; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:"Segoe UI",system-ui,sans-serif; background:var(--bg);
+         color:var(--text); line-height:1.5; }
+  .wrap { max-width:980px; margin:0 auto; padding:24px; }
+  h1 { font-size:1.7rem; margin:0 0 4px; }
+  h2 { font-size:1.15rem; border-bottom:1px solid #334155; padding-bottom:6px;
+       margin:28px 0 12px; color:var(--accent); }
+  .muted { color:var(--muted); font-size:0.85rem; }
+  .panel { background:var(--panel); border-radius:8px; padding:16px; margin:12px 0; }
+  table { width:100%; border-collapse:collapse; }
+  th, td { text-align:left; padding:6px 8px; border-bottom:1px solid #334155;
+           font-size:0.9rem; vertical-align:top; }
+  th { color:var(--muted); font-weight:600; }
+  .badge { display:inline-block; padding:2px 8px; border-radius:12px; font-size:0.75rem;
+           font-weight:700; }
+  .badge.high { background:#7f1d1d; color:#fecaca; }
+  .badge.med  { background:#78350f; color:#fde68a; }
+  .badge.low  { background:#164e63; color:#a5f3fc; }
+  .badge.ok   { background:#14532d; color:#bbf7d0; }
+  .timeline { border-left:2px solid #334155; margin-left:8px; padding-left:16px; }
+  .tl { position:relative; padding:4px 0 12px; }
+  .tl .t { color:var(--accent); font-weight:600; font-size:0.85rem; }
+  .tl .d { color:var(--muted); font-size:0.85rem; }
+  .finding { border-left:3px solid var(--warn); padding:8px 12px; margin:8px 0;
+             background:var(--panel); border-radius:4px; }
+  ul { margin:4px 0 4px 20px; padding:0; }
+  code { background:#0b1120; padding:1px 5px; border-radius:4px; font-size:0.85rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>PC Diagnostic Report</h1>
+  <div class="muted">Generated: {{GENERATED_AT}}</div>
+  {{BODY}}
+</div>
+</body>
+</html>

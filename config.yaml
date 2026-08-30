@@ -1,0 +1,32 @@
+# PC Diagnostic Agent configuration
+# Values are validated at startup; invalid values fall back to safe defaults.
+
+# How often (in seconds) high-frequency metrics are collected.
+# Allowed: 10, 30, 60
+collection_interval_seconds: 30
+
+# How often (in seconds) low-frequency collectors run
+# (hardware inventory, GPU, temperatures, disk health, event log tailing).
+low_frequency_interval_seconds: 300
+
+# Rolling retention window for metrics (hours).
+retention_hours: 24
+
+# Diagnostic evidence window preserved around a detected incident (minutes).
+incident_window_before_minutes: 30
+incident_window_after_minutes: 5
+
+temperature:
+  warning_celsius: 85
+  critical_celsius: 95
+
+thresholds:
+  cpu_warning_percent: 90
+  cpu_critical_percent: 98
+  memory_warning_percent: 90
+  memory_critical_percent: 95
+  disk_warning_percent: 90
+  disk_free_gb_warning: 5
+
+logging:
+  level: INFO
